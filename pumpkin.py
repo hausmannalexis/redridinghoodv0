@@ -1,6 +1,6 @@
 import subprocess
 import os
-file_path = "misc/pumpkin.pulp"
+file_path = "MISC/pumpkin.pulp"
 if os.path.exists(file_path):
     subprocess.run(["sudo", "wifipumpkin3", "--pulp", file_path])
 else:
