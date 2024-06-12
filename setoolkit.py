@@ -17,8 +17,21 @@ if option == "1":
         "13\n",
         "2\n",
         "1\n",
-        ip,
-                
+        ip\n,
+        "443\n",
+        "2\n",
+        "test.pdf\n",
+        "1\n",
+        "1\n",
+        "3\n",
+        targetmail,
+        "1\n",
+        mail,
+        "test\n",
+        password,
+        "yes\n",
+        "yes\n",
+        "yes\n",
     ]
 
     for command in commands:
