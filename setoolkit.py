@@ -1,6 +1,6 @@
 import subprocess
 
-option = input("Do you want to phish using 1. email, 2. phone nr. or 3. webpage?: ")
+option = input("Do you want to phish using 1. email, 2. phone nr. or 3. clone page?: ")
 if option == "1":
     targetmail = input("Mail of target?: ")
     mail = input("Your Gmail?: ")
