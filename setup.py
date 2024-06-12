@@ -2,6 +2,7 @@ import time
 import subprocess
 subprocess.run(["sudo", "apt", "update"])
 subprocess.run(["sudo", "apt", "install", "wordlists"])
+subprocess.run(["git", "clone", "https://github.com/kennyn510/wpa2-wordlists.git", "&&", "cd", "wpa2-wordlists/Wordlists/Rockyou", "&&", "gunzip", "*.gz", "&&", "cat", "*.txt>>full.txt"])
 subprocess.run(["sudo", "apt", "install", "aircrack-ng"])
 subprocess.run(["sudo", "apt", "install", "wifipumpkin3"])
 subprocess.run(["sudo", "apt", "install", "whatweb"])
