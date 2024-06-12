@@ -17,7 +17,7 @@ if option == "1":
         "13\n",
         "2\n",
         "1\n",
-        ip\n,
+        ip,
         "443\n",
         "2\n",
         "test.pdf\n",
