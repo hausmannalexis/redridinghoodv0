@@ -4,7 +4,6 @@ if choice=="1" or choice=="username":
   target=input("enter username: ")
   subprocess.run(["sudo", "sherlock", target])
   subprocess.run(["sudo", "userrecon", target])
-  subprocess.run(["sudo", "whatsmyname", "-u", target])
 else:
   pass
 if choice=="2" or choice=="email":
