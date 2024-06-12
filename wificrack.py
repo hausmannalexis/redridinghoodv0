@@ -26,7 +26,7 @@ def main():
     except KeyboardInterrupt:
         choice = input("Do you want to crack the captured handshake? (y/n): ").strip().lower()
         if choice == "y":
-            run_command(["sudo", "aircrack-ng", "-w", "MISC/WORDLISTS/wordlist.txt", "-b", bssid, "WPA/wificrack.cap"])
+            run_command(["sudo", "aircrack-ng", "-w", "MISC/WORDLISTS/wordlist.txt", "-b", bssid, "MISC/WPA/wificrack.cap"])
         else:
             print("Exiting without cracking the handshake.")
             exit(0)
