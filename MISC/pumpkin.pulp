@@ -4,6 +4,5 @@ set ssid Free Hotspot
 set bssid 00:00:00:00:00:00
 set proxy noproxy
 ignore pydns_server
-ignore pydhcp_server
 start
 
