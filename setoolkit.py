@@ -11,7 +11,6 @@ def email_phishing():
     ip = input("Your IP to listen to the shell: ")
     targetmail = input("Mail of target?: ")
     mail = input("Your Gmail?: ")
-    password = input("Gmail password?: ")
     filename = input("What should the file be called?: ")
 
     commands = [
